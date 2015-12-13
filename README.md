@@ -1,6 +1,18 @@
-# <img height="70px" src="http://www.jwplayer.com/wp-content/uploads/JWP-GitHub-Banner-1.png" alt="JW Player Logo" title="JW Player Logo"/>
+ctplayer
+=======
 
-[![Join the chat at https://gitter.im/jwplayer/jwplayer](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jwplayer/jwplayer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+December 12, 2015
+------------------
+
+The jwplayer fork has been renamed to ctplayer for those of a different faith.
+Also, the OVA files for VAST XML loading have been committed to ctplayer/src/flash/org
+The code to wire OVA up to the FOSS version of this player will come next.
+Also we will import the JS VPAID code implementation from: https://github.com/ryanthompson591/vpaidExamples
+
+December 11, 2015
+------------------
+
+OLD JWPLAYER MESSAGE ARCHIVE BELOW
 
 > Plays everywhere, every time.
 > 
