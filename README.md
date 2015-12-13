@@ -9,8 +9,8 @@ flex_sdk_3 was imported into nginadfoundation's Github from Google code.
 Instructions: Import the flex_sdk_3 from the nginadfoundation Github into ctplayer/flex_sdk_3/
 You will need it to compile ctplayer.
 
-> cd ctplayer/flex_sdk_3/
-> git clone https://github.com/nginadfoundation/flexsdk.git
+* cd ctplayer/flex_sdk_3/
+* git clone https://github.com/nginadfoundation/flexsdk.git
 
 December 12, 2015
 ------------------
