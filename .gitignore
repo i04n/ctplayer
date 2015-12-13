@@ -9,3 +9,5 @@ bin-release
 built
 bower_components
 reports
+/flex_sdk_3/*
+!/flex_sdk_3/readme.txt
