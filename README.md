@@ -10,8 +10,8 @@ You can download it here: https://ant.apache.org/bindownload.cgi
 
 After you un-archive it to a directory make sure it's on your system path then:
 
-* cd ctplayer/build-script
-* ant
+* > cd ctplayer/build-script
+* > ant
 
 that will begin the build process for ctplayer.
 
@@ -24,9 +24,9 @@ flex_sdk_3 was imported into nginadfoundation's Github from Google code.
 Instructions: Import the flex_sdk_3 from the nginadfoundation Github into ctplayer/flex_sdk_3/
 You will need it to compile ctplayer.
 
-* cd ctplayer/flex_sdk_3/
-* git clone https://github.com/nginadfoundation/flexsdk.git
-* The directory ctplayer/flex_sdk_3/flexsdk containing the Flex 3 SDK should exist after you check it out.
+* > cd ctplayer/flex_sdk_3/
+* > git clone https://github.com/nginadfoundation/flexsdk.git
+* > The directory ctplayer/flex_sdk_3/flexsdk containing the Flex 3 SDK should exist after you check it out.
 
 December 12, 2015
 ------------------
