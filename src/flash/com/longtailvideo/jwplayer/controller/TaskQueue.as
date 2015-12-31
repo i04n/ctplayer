@@ -1,4 +1,4 @@
-package com.longtailvideo.jwplayer.controller {
+﻿package com.longtailvideo.jwplayer.controller {
 import com.longtailvideo.jwplayer.events.PlayerEvent;
 
 import flash.events.ErrorEvent;
@@ -24,12 +24,12 @@ import flash.events.EventDispatcher;
  * if one of the tasks in the queue fails.
  */
 public class TaskQueue extends EventDispatcher {
-
-    public function TaskQueue(cont:Boolean = false) {
-        _tasks = new <Task>[];
+	
+	public function TaskQueue(cont:Boolean = false) {
+        _tasks = new Vector.<Task>([]);
         _continueOnFailure = cont;
-    }
-    private var _taskIndex:int = -1;
+    }    
+	private var _taskIndex:int = -1;
     private var _tasks:Vector.<Task>;
     private var _completed:Boolean = false;
     private var _failureState:Boolean = false;
