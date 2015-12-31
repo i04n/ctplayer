@@ -25,8 +25,9 @@
                    var cleanConfigObject:Object = ObjectUtil.copy(systemManager.loaderInfo.parameters);
                     delete cleanConfigObject['file'];
                     delete cleanConfigObject['type'];
-                    _player = new Player();
+                    _player = new Player(playerHolder,cleanConfigObject);
                     _player.addEventListener("jwplayerReady",playerReadyHandler);
+                    _player.add2Root();
                 }
                 catch(error:Error)
                 {
