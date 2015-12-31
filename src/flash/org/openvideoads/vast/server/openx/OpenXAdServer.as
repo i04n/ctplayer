@@ -53,7 +53,7 @@ package org.openvideoads.vast.server.openx {
 			if(adSchedule.haveAdSlotsToSchedule()) {
 				doLog("Requesting a template with " + adSchedule.adSlots.length + " ads...", Debuggable.DEBUG_VAST_TEMPLATE);
 				var openXRequest:OpenXVASTAdRequest = new OpenXVASTAdRequest(_openXConfig);
-				openXRequest.zones = adSchedule.zones;
+				openXRequest.formRequest(adSchedule.zones);
 				_template = new VideoAdServingTemplate(listener, openXRequest);
 			}
 			else {
