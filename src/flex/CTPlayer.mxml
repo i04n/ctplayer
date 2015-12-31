@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"    
+    layout="absolute" 
+     width="300" height="200" creationComplete="creationCompleteHandler(event)" minHeight="200" minWidth="300">   
+    <mx:Metadata>
+        [Event(name="playerReady", type="flash.events.Event")]
+    </mx:Metadata>
+    <mx:Script>
+        <![CDATA[
+            import mx.events.FlexEvent;
+            import mx.utils.ObjectUtil;
+            
+            import com.longtailvideo.jwplayer.player.Player;
+            
+            private var _player:Player;
+            /** CTPlayer **/
+            public function get player():com.longtailvideo.jwplayer.player.Player
+            {
+                return _player;
+            }
+            protected function creationCompleteHandler(event:FlexEvent):void
+            {
+                try
+                {
+                   var cleanConfigObject:Object = ObjectUtil.copy(systemManager.loaderInfo.parameters);
+                    delete cleanConfigObject['file'];
+                    delete cleanConfigObject['type'];
+                    _player = new Player();
+                    _player.addEventListener("jwplayerReady",playerReadyHandler);
+                }
+                catch(error:Error)
+                {
+                    // log('CTPlayer:'+ error.toString());
+                }
+            }
+            private function playerReadyHandler(event:Event):void
+            {
+                dispatchEvent(new Event("playerReady"));
+				// log('CTPlayer');
+            }
+        ]]>
+    </mx:Script>
+    <mx:UIComponent id='playerHolder' top="1" bottom="0" left="0" right="0" />
+</mx:Application>

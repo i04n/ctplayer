@@ -13,7 +13,8 @@
     <!-- input / output files -->
     <property name="APP_FILE_NAME" value="${APP_NAME}-${VERSION}.swf" />
     <property name="APP_OUTPUT_FILE" value="${BUILD_DIR}/${APP_FILE_NAME}" />
-    <property name="MXML_FILE" location="${APP_ROOT_DIR}/src/${APP_NAME}.mxml" />
+    <property name="SWC_OUTPUT_FILE" value="${LIB_DIR}/ctplayer.swc" />
+    <property name="MXML_FILE" location="${APP_ROOT_DIR}/src/flex/CTPlayer.mxml" />
     <!-- UNCOMMENT FOR WINDOWS OS -->
     <property name="COMPC_FILE" location="${FLEX_HOME}/bin/compc.exe" />
     <!-- UNCOMMENT FOR LINUX/MAC OS -->
@@ -33,14 +34,27 @@
 		<mkdir dir="${BUILD_DIR}" />
 	</target>
 
-	<target name="build" depends="init" description="build swf">
+	<taskdef name="mxmlc" classname="flex.ant.MxmlcTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+    <taskdef name="html-wrapper" classname="flex.ant.HtmlWrapperTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+	<target name="build-swc" depends="init" description="build swc">
 		<exec executable="${COMPC_FILE}" failonerror="false" >
 			<arg value="-include-sources=${SRC_DIR}" />
 			<arg value="-compiler.library-path=${LIB_DIR}" />
 			<arg value="-compiler.source-path=${SRC_DIR}" />
-			<arg value="-output=${APP_OUTPUT_FILE}" />
-		</exec>
+			<arg value="-output=${SWC_OUTPUT_FILE}" />
+		</exec> 
 	</target>
+
+    <target name="build" depends="build-swc" description="build swf">
+        <mxmlc file="${MXML_FILE}" output="${APP_OUTPUT_FILE}" failonerror="true" maxmemory="1024m">
+            <source-path path-element="${SRC_DIR}"/>
+            <library-path dir="${LIB_DIR}" includes="*" append="true"/>
+            <compiler.include-libraries dir="${LIB_DIR}" append="true">
+           		<include name="ctplayer.swc" />
+          	</compiler.include-libraries>
+        </mxmlc>
+    </target>
 
     <target name="deploy">
         <copy todir="${DEPLOY_DIR}">
