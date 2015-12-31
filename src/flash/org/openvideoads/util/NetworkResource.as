@@ -19,8 +19,6 @@
 package org.openvideoads.util {
     import flash.events.*;
     import flash.net.*;
-
-    import com.adobe.utils.StringUtil;
     
     import org.openvideoads.base.Debuggable;
     import org.openvideoads.util.StringUtils;
@@ -174,7 +172,7 @@ package org.openvideoads.util {
 		}
 
         public static function appendToPath(base:String, postFix:String):String {
-            if (StringUtil.endsWith(base, "/")) return base + postFix;
+            if (StringUtils.endsWith(base, "/")) return base + postFix;
             return base + "/" + postFix;
         }
 

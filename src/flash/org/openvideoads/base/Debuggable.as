@@ -17,7 +17,7 @@
  *    along with the framework.  If not, see <http://www.gnu.org/licenses/>.
  */
 package org.openvideoads.base {
-	import com.adobe.utils.StringUtil;
+	import org.openvideoads.util.StringUtils;
 	
 	import flash.external.ExternalInterface;
 	
@@ -91,7 +91,7 @@ package org.openvideoads.base {
   			var results:Array = levelAsString.split(/,/);
   			var newLevel:int = 0;
   			for(var i:int=0; i < results.length; i++) {
-  				switch((StringUtil.trim(results[i])).toUpperCase()) {
+  				switch((StringUtils.trim(results[i])).toUpperCase()) {
   					case "ALL":
   						newLevel = newLevel | DEBUG_ALL;
   						break;
