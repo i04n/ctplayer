@@ -2,7 +2,6 @@ package com.longtailvideo.jwplayer.player {
 import com.longtailvideo.jwplayer.utils.SimpleEvents;
 
 import flash.external.ExternalInterface;
-import com.adobe.serialization.json.JSON;
 
 public class SwfEventRouter {
 
