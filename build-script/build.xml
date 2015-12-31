@@ -14,7 +14,10 @@
     <property name="APP_FILE_NAME" value="${APP_NAME}-${VERSION}.swc" />
     <property name="APP_OUTPUT_FILE" value="${BUILD_DIR}/${APP_FILE_NAME}" />
     <property name="MXML_FILE" location="${APP_ROOT_DIR}/src/${APP_NAME}.mxml" />
-    <property name="COMPC_FILE" location="${FLEX_HOME}/bin/compc" />
+    <!-- UNCOMMENT FOR WINDOWS OS -->
+    <property name="COMPC_FILE" location="${FLEX_HOME}/bin/compc.exe" />
+    <!-- UNCOMMENT FOR LINUX/MAC OS -->
+	<!-- <property name="COMPC_FILE" location="${FLEX_HOME}/bin/compc" /> -->
 
     <target name="help">
         <echo message="targets" />

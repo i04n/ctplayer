@@ -1,14 +1,21 @@
 ctplayer
 =======
 
+December 30, 2015
+------------------
+
+Update the build instructions to specify the relative path of the Flex SDK.
+Also specify that only the x86 version of the JDK will work with the Flex SDK.
+
 December 13, 2015
 ------------------
 
-The build.xml file requires Apache ant.
+The build.xml file requires Apache ant and the Oracle Java JDK.
 
 You can download it here: https://ant.apache.org/bindownload.cgi
 
-After you un-archive it to a directory make sure it's on your system path then:
+After you un-archive it to a directory make sure both ant and the jdk/bin directory are on your system path
+and JAVA_HOME is defined as the path to the JDK root directory in your environment then:
 
 * > cd ctplayer/build-script
 * > ant
