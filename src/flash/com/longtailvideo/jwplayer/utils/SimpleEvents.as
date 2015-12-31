@@ -1,5 +1,15 @@
-package com.longtailvideo.jwplayer.utils {
+﻿package com.longtailvideo.jwplayer.utils {
 import com.longtailvideo.jwplayer.player.SwfEventRouter;
+
+import flash.events.ErrorEvent;
+import flash.events.Event;
+
+/**
+ * Required because SwfEventRouter is imported
+ *
+ * @eventType flash.events.ErrorEvent.ERROR
+ */
+[Event(name="error", type="flash.events.ErrorEvent")]
 
 /**
  * AS3 event handling based on backbone.Events
@@ -36,7 +46,7 @@ public class SimpleEvents {
         if (!_events) {
             _events = {};
         }
-        var events:Vector.<Function> = _events[name] || (_events[name] = new <Function>[]);
+        var events:Vector.<Function> = _events[name] || (_events[name] = new Vector.<Function>([]));
         events.push(callback);
         return this;
     }
@@ -52,7 +62,7 @@ public class SimpleEvents {
         var events:Vector.<Function> = _events[name];
         var retain:Vector.<Function>;
         if (events) {
-            _events[name] = retain = new <Function>[];
+            _events[name] = retain = new Vector.<Function>([]);
             if (callback is Function) {
                 for (var i:uint = 0, len:uint = events.length; i < len; i++) {
                     var handler:Function = events[i];
