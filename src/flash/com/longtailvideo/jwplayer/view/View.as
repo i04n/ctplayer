@@ -89,7 +89,7 @@ public class View extends Sprite {
             try {
                 plugin.resize(width, height);
             } catch (e:Error) {
-                SwfEventRouter.error(e.code, e.message);
+                SwfEventRouter.error(e.errorID, e.message);
             }
         }
     }
