@@ -11,7 +11,7 @@
     <property name="BUILD_DIR" location="${APP_ROOT_DIR}/build" />
 
     <!-- input / output files -->
-    <property name="APP_FILE_NAME" value="${APP_NAME}-${VERSION}.swc" />
+    <property name="APP_FILE_NAME" value="${APP_NAME}-${VERSION}.swf" />
     <property name="APP_OUTPUT_FILE" value="${BUILD_DIR}/${APP_FILE_NAME}" />
     <property name="MXML_FILE" location="${APP_ROOT_DIR}/src/${APP_NAME}.mxml" />
     <!-- UNCOMMENT FOR WINDOWS OS -->
@@ -33,7 +33,7 @@
 		<mkdir dir="${BUILD_DIR}" />
 	</target>
 
-	<target name="build" depends="init" description="build swc">
+	<target name="build" depends="init" description="build swf">
 		<exec executable="${COMPC_FILE}" failonerror="false" >
 			<arg value="-include-sources=${SRC_DIR}" />
 			<arg value="-compiler.library-path=${LIB_DIR}" />
