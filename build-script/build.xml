@@ -27,6 +27,7 @@
 
 	<target name="clean" description="clean up">
 		<delete dir="${BUILD_DIR}" />
+		<delete file="${LIB_DIR}/ctplayer.swc" />
 	</target>
 
 	<target name="init" depends="clean" description="setup build">
