@@ -1,6 +1,13 @@
 ctplayer
 =======
 
+December 31, 2015
+------------------
+
+Update the flex_3_sdk from https://github.com/nginadfoundation/flexsdk
+and recompile with ant build.
+You will see that the code now compiles against Flash Player 11 and produces ctplayer\build\ctplayer-0.1.0.swc
+
 December 30, 2015
 ------------------
 
