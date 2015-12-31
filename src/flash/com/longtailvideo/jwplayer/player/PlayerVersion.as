@@ -5,7 +5,7 @@ public class PlayerVersion {
     public static var id:String = "";
     public static var edition:String = "";
 
-    protected static var _version:String = JWPLAYER::version;
+    protected static var _version:String = "0.1.0";
 
     public static function get version():String {
         return _version;
