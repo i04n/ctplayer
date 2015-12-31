@@ -17,7 +17,6 @@
  *    along with the framework.  If not, see <http://www.gnu.org/licenses/>.
  */
 package org.openvideoads.util {
-	import com.adobe.serialization.json.JSON;
 
 	/**
 	 * @author Paul Schulz
@@ -32,7 +31,7 @@ package org.openvideoads.util {
 			}
 			else {
 				if(value is String) {
-					var result:Array = JSON.decode(value as String) as Array;
+					var result:Array = JSON.parse(value as String) as Array;
 				}
 			}
 			return new Array();
