@@ -16,8 +16,6 @@ import flash.events.ErrorEvent;
 import flash.events.Event;
 import flash.geom.Rectangle;
 import flash.system.Security;
-import flash.display.DisplayObject;
-import flash.display.DisplayObjectContainer;
 
 [SWF(width="640", height="360", frameRate="30", backgroundColor="#000000")]
 
@@ -26,17 +24,12 @@ public class Player extends Sprite implements IPlayer {
     protected var _model:Model;
     protected var _view:View;
     protected var _controller:Controller;
-	protected var _root:DisplayObjectContainer;
-	protected var _params:Object;
 
     protected var _instream:InstreamPlayer;
 
-    public function Player(_rt:DisplayObjectContainer,_p:Object=null) {
+    public function Player() {
         Security.allowDomain("*");
 
-		_root 	= _rt;
-		_params = _p;
-		
         // Send embedded event so we know flash isn't blocked
         SwfEventRouter.triggerJsEvent('embedded');
 
@@ -76,7 +69,7 @@ public class Player extends Sprite implements IPlayer {
         this.addEventListener('throttle', onThrottleEvent);
         _model.addEventListener(MediaEvent.JWPLAYER_MEDIA_TIME, removeThrottleListener);
 
-        RootReference.init(this._root,this._params);
+        RootReference.init(this);
         _view.setupView();
     }
 
@@ -238,10 +231,6 @@ public class Player extends Sprite implements IPlayer {
 
         return true;
     }
-	
-	public function add2Root():void {
-			_root.addChild(this);
-	}
 
     protected function setupPlayer(config:Object):void {
         delete config.playlist;

@@ -9,7 +9,6 @@ public class RootReference {
 
     /** The root DisplayObject of the application.  **/
     private static var _root:DisplayObject;
-	public static var parameters:Object;
 
     /** A reference to the stage. **/
     private static var _stage:Stage;
@@ -22,10 +21,9 @@ public class RootReference {
         return _stage;
     }
 
-    public static function init(displayObj:DisplayObject,params:Object=null):void {
+    public static function init(displayObj:DisplayObject):void {
         _root  = displayObj.root;
         _stage = displayObj.stage;
-		parameters = params;
     }
 }
 }
