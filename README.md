@@ -1,5 +1,11 @@
 ctplayer
 =======
+January 2, 2016
+------------------
+Due to the Flex "Initializing" and loading slider which is extremely annoying, we are getting rid of Flex 3 SDK
+and using FlashDevelop, the free Flash IDE to compile the flash version of CTPlayer instead.
+The flex_3_sdk project will be deleted from Github and the build files will be changed to FlashDevelop's.
+http://www.flashdevelop.org/downloads/releases/FlashDevelop-5.0.2.exe
 
 December 31, 2015
 ------------------
